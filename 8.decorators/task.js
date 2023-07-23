@@ -4,7 +4,7 @@ function cachingDecoratorNew(func) {
 	return (...args) => {
 		const hash = md5(args);
 		if (hash in cache) {
-			return ' Из кэша: ' + cache[hash];
+			return 'Из кеша: ' + cache[hash];
 		}
 		const result = func(...args);
 		if (Object.keys(cache).length > 4) {
@@ -19,7 +19,7 @@ function cachingDecoratorNew(func) {
 }
 //Задача № 2
   
-  function debounceDecoratorNew(func, delay){
+function debounceDecoratorNew(func, delay){
     let timerId = null;
   function resultFunction(...args) {
     resultFunction.allCount++;
